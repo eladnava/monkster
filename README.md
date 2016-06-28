@@ -47,6 +47,7 @@ catch (err) {
 // Count number of documents in the collection (with promises)
 var count = yield users.count({})
     .then(function (count) {
+        // Query succeeded
         console.log('Number of documents', count);
     }).catch(function (err) {
         // Query failed for more than "maxTries" number of tries
