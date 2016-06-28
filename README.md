@@ -36,8 +36,8 @@ var users = wrap(db.get('users'));
 Finally, invoke your queries as you are used to -- Monkster will take care of the error handling and retry logic for you. Feel free to use ES6 generators to achieve this.
 
 ```js
-// Insert a document into the collection (with generators)
 try {
+    // Insert a document into the collection (with generators)
     yield users.insert({ name: 'Hello World' });
 }
 catch (err) {
@@ -45,11 +45,12 @@ catch (err) {
 }
 
 // Count number of documents in the collection (with promises)
-var count = yield users.count({}).then(function (count) {
-    console.log('Number of documents', count);
-}).catch(function (err) {
-    // Query failed for more than "maxTries" number of tries
-});
+var count = yield users.count({})
+    .then(function (count) {
+        console.log('Number of documents', count);
+    }).catch(function (err) {
+        // Query failed for more than "maxTries" number of tries
+    });
 ```
 
 Check out [`examples/basic.js`](examples/basic.js) for a more complete example.
