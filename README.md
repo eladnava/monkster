@@ -27,10 +27,10 @@ var db = monk('localhost/test');
 
 // Initialize Monkster and customize its error handling behavior
 var wrap = monkster({
-    // If a query fails more than X times, give up on it (default: 5)
-    maxTries: 5,
-    // Number of milliseconds to wait before retrying a failed query (default: 100)
-    retryInterval: 100
+    // If a query fails more than X times, give up on it (default: 60)
+    maxTries: 60,
+    // Number of milliseconds to wait before retrying a failed query (default: 1000)
+    retryInterval: 1000
 });
 
 // Wrap your collections with monkster
@@ -67,10 +67,10 @@ Monkster supports the following configuration, passed in when invoking `monkster
 
 ```js
 var options = {
-    // If a query fails more than X times, give up on it (default: 5)
-    maxTries: 5,
-    // Number of milliseconds to wait before retrying a failed query (default: 100)
-    retryInterval: 100
+    // If a query fails more than X times, give up on it
+    maxTries: 60,
+    // Number of milliseconds to wait before retrying a failed query
+    retryInterval: 1000
 }
 
 var wrap = monkster(options);
