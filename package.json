@@ -1,0 +1,23 @@
+{
+  "name": "monkster",
+  "version": "1.0.0",
+  "description": "Provides high availability for Monk, the wise MongoDB API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eladnava/monkster.git"
+  },
+  "author": "Elad Nava",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/eladnava/monkster/issues"
+  },
+  "homepage": "https://github.com/eladnava/monkster#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "monk": "^2.1.0"
+  }
+}
