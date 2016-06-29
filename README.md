@@ -6,7 +6,7 @@ A Node.js package that provides high availability for [Monk](https://github.com/
 ## Motivations
 
 * Unexpected network connectivity / DNS server issues could cause queries to fail every once in a while
-* Scheduled replica set step-downs would cause outstanding queries to fail with "Could not locate any valid servers in initial seed list", "sockets closed", and "ECONNRESET" before additional queries would get buffered up even though `bufferMaxEntries` is correctly configured
+* Replica set step-downs would cause outstanding queries to fail with "Could not locate any valid servers in initial seed list", "sockets closed", and "ECONNRESET" before additional queries would get buffered up even though `bufferMaxEntries` is correctly configured
 
 ## Usage
 
