@@ -18,6 +18,6 @@
   "homepage": "https://github.com/eladnava/monkster#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "monk": "^2.1.0"
+    "monk": "^3.1.2"
   }
 }
