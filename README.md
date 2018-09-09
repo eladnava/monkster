@@ -50,7 +50,7 @@ catch (err) {
 }
 
 // Count number of documents in the collection (with promises)
-var count = yield users.count({})
+var count = users.count({})
     .then(function (count) {
         // Query succeeded
         console.log('Number of documents', count);
