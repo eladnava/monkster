@@ -30,7 +30,11 @@ var wrap = monkster({
     // If a query fails more than X times, give up on it (default: 60)
     maxTries: 60,
     // Number of milliseconds to wait before retrying a failed query (default: 1000)
-    retryInterval: 1000
+    retryInterval: 1000,
+    // Optionally log slow queries 
+    logSlowQueries: false,
+    // Only log slow queries taking longer than the following threshold (in ms)
+    logSlowQueryThreshold: 100
 });
 
 // Wrap your collections with monkster
