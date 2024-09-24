@@ -16,7 +16,7 @@ monkster({
     retryInterval: 1000
 });
 
-// Wrap your collections with monkster
+// Use Monk as you normally would
 var users = db.get('users');
 
 // ES6 generator control flow
