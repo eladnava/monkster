@@ -2,7 +2,7 @@
   "name": "monkster",
   "version": "1.0.15",
   "description": "Provides high availability for Monk, the wise MongoDB API.",
-  "main": "index.js",
+  "main": "lib/monkster.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +18,12 @@
   "homepage": "https://github.com/eladnava/monkster#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "monk": "^3.1.2"
+    "co-sleep": "^0.0.1",
+    "monk": "^7.3.4"
+  },
+  "overrides": {
+    "monk": {
+      "mongodb": "~3.5.7"
+    }
   }
 }

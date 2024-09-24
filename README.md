@@ -16,7 +16,7 @@ First, install the package using npm:
 npm install monkster --save
 ```
 
-Then, require `monkster` and wrap your collections with it, as demonstrated here:
+Then, require `monkster`:
 
 ```js
 var monk = require('monk');
@@ -26,7 +26,7 @@ var monkster = require('monkster');
 var db = monk('localhost/test');
 
 // Initialize Monkster and customize its error handling behavior
-var wrap = monkster({
+monkster({
     // If a query fails more than X times, give up on it (default: 60)
     maxTries: 60,
     // Number of milliseconds to wait before retrying a failed query (default: 1000)
@@ -37,9 +37,9 @@ var wrap = monkster({
     logSlowQueryThreshold: 100
 });
 
-// Wrap your collections with monkster
-var logs = wrap(db.get('logs'));
-var users = wrap(db.get('users'));
+// Use Monk as you normally would
+var logs = db.get('logs');
+var users = db.get('users');
 ```
 
 Finally, invoke your queries as you are used to -- Monkster will take care of the error handling and retry logic for you. Feel free to use ES6 generators to achieve this.
@@ -75,9 +75,13 @@ var options = {
     maxTries: 60,
     // Number of milliseconds to wait before retrying a failed query
     retryInterval: 1000
+    // Optionally log slow queries 
+    logSlowQueries: false,
+    // Only log slow queries taking longer than the following threshold (in ms)
+    logSlowQueryThreshold: 100
 }
 
-var wrap = monkster(options);
+monkster(options);
 ```
 
 ## License

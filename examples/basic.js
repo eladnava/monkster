@@ -1,13 +1,15 @@
-// Change '../' to 'monkster' to use this code outside of the package
-var monkster = require('../');
 var co = require('co');
 var monk = require('monk');
+var sleep = require('co-sleep');
+
+// Change '../' to 'monkster' to use this code outside of the package
+var monkster = require('../');
 
 // Initialize Monk with your MongoDB connection string
 var db = monk('localhost/test');
 
 // Initialize Monkster and customize its error handling behavior
-var wrap = monkster({
+monkster({
     // If a query fails more than X times, give up on it
     maxTries: 60,
     // Number of milliseconds to wait before retrying a failed query
@@ -15,7 +17,7 @@ var wrap = monkster({
 });
 
 // Wrap your collections with monkster
-var users = wrap(db.get('users'));
+var users = db.get('users');
 
 // ES6 generator control flow
 co(function* () {
@@ -32,6 +34,9 @@ co(function* () {
 
             // Print current document count
             console.log('collection.count:', count);
+
+            // Sleep for 1s
+            yield sleep(1000);
         }
         catch (err) {
             // Query failed for more than X tries
