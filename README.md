@@ -74,7 +74,7 @@ var options = {
     // If a query fails more than X times, give up on it
     maxTries: 60,
     // Number of milliseconds to wait before retrying a failed query
-    retryInterval: 1000
+    retryInterval: 1000,
     // Optionally log slow queries 
     logSlowQueries: false,
     // Only log slow queries taking longer than the following threshold (in ms)
