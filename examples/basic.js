@@ -1,9 +1,11 @@
 var co = require('co');
-var monk = require('monk');
 var sleep = require('co-sleep');
 
 // Change '../' to 'monkster' to use this code outside of the package
 var monkster = require('../');
+
+// Use the monk module Monkster patches. A separate require('monk') can load a second copy.
+var monk = monkster.monk;
 
 // Initialize Monk with your MongoDB connection string
 var db = monk('localhost/test');

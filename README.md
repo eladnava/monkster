@@ -19,8 +19,10 @@ npm install monkster --save
 Then, require `monkster`:
 
 ```js
-var monk = require('monk');
 var monkster = require('monkster');
+
+// Use the monk module Monkster patches. A separate require('monk') can load a second copy.
+var monk = monkster.monk;
 
 // Initialize Monk with your MongoDB connection string
 var db = monk('localhost/test');
