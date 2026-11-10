@@ -4,7 +4,7 @@
   "description": "Provides high availability for Monk, the wise MongoDB API.",
   "main": "lib/monkster.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --expose-gc test/leaks.js"
   },
   "repository": {
     "type": "git",
